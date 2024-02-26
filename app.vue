@@ -4,14 +4,13 @@
       <VyCopy />
       <div class="flex justify-center">
         <input v-model="written" class="p-2 border" />
-        <button class="border p-3" @click="copyText()">Copy Text</button>
+        <VyButton
+          label="Copy Text"
+          class="button--success button--solid button--md border p-6"
+          @click="copyText()"
+        ></VyButton>
       </div>
 
-      <VyButton
-        label="Success"
-        class="button--success button--solid button--md border"
-      ></VyButton>
-      {{ written }}
       <VyNotificationPort
         name="toast"
         class="port--center port--bottom space-y-2 pb-8"
@@ -30,7 +29,7 @@ const copyText = () => {
   $global.$vayu.notify({
     port: "toast",
     title: "Text Copied",
-    duration: 10000,
+    duration: 1500,
     state: "success",
   });
   console.log("$global.$vayu", $global.$vayu);
