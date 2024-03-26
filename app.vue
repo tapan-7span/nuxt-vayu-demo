@@ -2,7 +2,8 @@
   <div class="my-10 text-center text-xl font-semibold">
     <ClientOnly>
       <VyCopy />
-      <div class="flex justify-center">
+      <div class="flex justify-center items-center gap-2">
+        <VyIcon name="VClose" class="fill-black h-10 w-10" />
         <input v-model="written" class="p-2 border" />
         <VyButton
           label="Copy Text"
